@@ -22,12 +22,7 @@ export default function Index(): JSX.Element {
     >
       <Center sx={{ paddingTop: "2rem" }}>
         <VStack spacing={3}>
-          <Heading
-            onMouseOver={(e) => {}}
-            color={"chocolate"}
-            as={"h1"}
-            size="4xl"
-          >
+          <Heading color={"chocolate"} as={"h1"} size="4xl">
             QRコードを作るよ🐻
           </Heading>
           <Box sx={{ paddingTop: "3rem", width: "30rem" }}>
@@ -67,13 +62,7 @@ export default function Index(): JSX.Element {
               <Button
                 colorScheme={"whatsapp"}
                 sx={{ width: "10rem", height: "3rem" }}
-                onClick={() => {
-                  const speech = new SpeechSynthesisUtterance(
-                    "ティーダのチンポ気持ち良すぎだろ"
-                  );
-                  speechSynthesis.speak(speech);
-                  setIsMake(true);
-                }}
+                onClick={() => setIsMake(true)}
               >
                 作成
               </Button>
