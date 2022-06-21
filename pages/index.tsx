@@ -22,14 +22,21 @@ export default function Index(): JSX.Element {
     >
       <Center sx={{ paddingTop: "2rem" }}>
         <VStack spacing={3}>
-          <Heading color={"chocolate"} as={"h1"} size="4xl">
+          <Heading
+            onMouseOver={(e) => {}}
+            color={"chocolate"}
+            as={"h1"}
+            size="4xl"
+          >
             QRコードを作るよ🐻
           </Heading>
           <Box sx={{ paddingTop: "3rem", width: "30rem" }}>
             <Input
+              type="text"
               colorScheme={"facebook"}
               variant={"outline"}
               size={"lg"}
+              id="ssid"
               placeholder="ssidを入力してください"
               onChange={(e) => {
                 if (isMake) setIsMake(false);
@@ -41,6 +48,7 @@ export default function Index(): JSX.Element {
             <Input
               variant={"outline"}
               size={"lg"}
+              type="text"
               placeholder="パスワードを入力してください"
               onChange={(e) => {
                 if (isMake) setIsMake(false);
@@ -59,7 +67,13 @@ export default function Index(): JSX.Element {
               <Button
                 colorScheme={"whatsapp"}
                 sx={{ width: "10rem", height: "3rem" }}
-                onClick={() => setIsMake(true)}
+                onClick={() => {
+                  const speech = new SpeechSynthesisUtterance(
+                    "ティーダのチンポ気持ち良すぎだろ"
+                  );
+                  speechSynthesis.speak(speech);
+                  setIsMake(true);
+                }}
               >
                 作成
               </Button>
