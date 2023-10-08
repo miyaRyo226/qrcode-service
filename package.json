@@ -14,7 +14,7 @@
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "framer-motion": "^6.3.11",
-    "next": "12.1.6",
+    "next": "13.5.4",
     "next-pwa": "^5.5.4",
     "qrcode.react": "^3.0.2",
     "react": "18.2.0",
