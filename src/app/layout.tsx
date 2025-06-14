@@ -1,5 +1,3 @@
-import {system} from "./_utils/theme"
-
 type Props = {children: React.ReactNode}
 
 export default function RootLayout({children}: Props) {
