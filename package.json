@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "biome lint src",
+    "lint:fix": "biome lint --apply src",
+    "format": "biome format src",
+    "format:fix": "biome format --write src",
+    "check": "biome check src",
+    "check:fix": "biome check --apply src",
     "export": "next build && next export"
   },
   "dependencies": {
@@ -22,6 +27,7 @@
     "@types/node": "^24.0.1",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "lefthook": "^1.11.13",
     "typescript": "^5.8.3"
   }
 }

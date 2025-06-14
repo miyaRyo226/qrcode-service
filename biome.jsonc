@@ -7,7 +7,9 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": []
+		"ignore": [
+			"public/**/*"
+		]
 	},
 	"formatter": {
 		"enabled": true,
@@ -30,5 +32,5 @@
 		"formatter": {
 			"quoteStyle": "double"
 		}
-	}
+	},
 }

@@ -4,6 +4,9 @@
     },
     "json.schemaDownload.enable": true,
     "json.validate.enable": true,
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/evilmartians/lefthook/master/schema.json": "lefthook.yml"
+    },
     "json.schemas": [
         {
             "fileMatch": [
