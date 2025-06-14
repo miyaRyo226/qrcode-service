@@ -1,4 +1,3 @@
-// See https://containers.dev/implementors/json_reference/ for configuration reference
 {
 	"name": "QRCode Generator App",
 	"build": {
@@ -10,5 +9,34 @@
 	],
 	"remoteEnv": {
 		"GIT_CONFIG_PARAMETERS": "'user.signingkey=/home/node/.ssh/id_ed25519.pub'"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"biomejs.biome",
+				"ms-vscode-remote.remote-containers"
+			],
+			"settings": {
+				"biome.diagnostic.enabled": true,
+				"biome.diagnostic.showInEditor": true,
+				"biome.diagnostic.showInStatusBar": true,
+				"biome.diagnostic.showInProblems": true,
+				"biome.diagnostic.showInOutput": true,
+				"editor.formatOnSave": true,
+				"editor.defaultFormatter": "biomejs.biome",
+				"[javascript]": {
+					"editor.defaultFormatter": "biomejs.biome"
+				},
+				"[typescript]": {
+					"editor.defaultFormatter": "biomejs.biome"
+				},
+				"[javascriptreact]": {
+					"editor.defaultFormatter": "biomejs.biome"
+				},
+				"[typescriptreact]": {
+					"editor.defaultFormatter": "biomejs.biome"
+				}
+			}
+		}
 	}
 }

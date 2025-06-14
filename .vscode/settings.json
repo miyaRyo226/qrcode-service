@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "devcontainer.json": "jsonc"
+    },
+    "json.schemaDownload.enable": true,
+    "json.validate.enable": true,
+    "json.schemas": [
+        {
+            "fileMatch": [
+                ".devcontainer/devcontainer.json"
+            ],
+            "url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json"
+        }
+    ]
+}
