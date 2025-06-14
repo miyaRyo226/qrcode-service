@@ -1,14 +1,11 @@
-// /next.config.js
-/** @type {import('next/dist/next-server/server/config-shared').NextConfig} */
+// TODO: PWAの設定が有効になるようにする
+// const withPWA = require("next-pwa");
+// const runtimeCaching = require("next-pwa/cache");
 
-const withPWA = require("next-pwa");
-const runtimeCaching = require("next-pwa/cache");
-
-const config = {
-  pwa: {
-    dest: "public",
-    runtimeCaching,
-  },
-};
-
-module.exports = withPWA(config);
+// @ts-check
+ 
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+}
+ 
+module.exports = nextConfig
