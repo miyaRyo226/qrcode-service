@@ -25,6 +25,9 @@
 			"correctness": {
 				"noUnusedImports": "error",
 				"noUnusedVariables": "error"
+			},
+			"complexity": {
+				"useLiteralKeys": "off"
 			}
 		}
 	},
@@ -32,5 +35,5 @@
 		"formatter": {
 			"quoteStyle": "double"
 		}
-	},
+	}
 }

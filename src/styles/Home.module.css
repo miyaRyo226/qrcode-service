@@ -1,0 +1,100 @@
+.container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 2rem;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	background: transparent;
+}
+
+.spacer {
+	flex: 0 0 10vh;
+}
+
+.title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 2rem;
+	color: var(--title-green);
+	letter-spacing: 0.05em;
+	text-shadow: 0 2px 8px var(--title-shadow);
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	background: rgba(255, 255, 255, 0.85);
+	padding: 2rem;
+	border-radius: 16px;
+	box-shadow: 0 4px 12px rgba(67, 233, 123, 0.08);
+}
+
+.inputField {
+	padding: 1rem;
+	border: 2px solid #c2f7e1;
+	border-radius: 8px;
+	font-size: 1rem;
+	transition: all 0.3s ease;
+	background: #fafff6;
+}
+
+.inputField:focus {
+	outline: none;
+	border-color: var(--accent-green);
+	box-shadow: 0 0 0 3px #e0ffe6;
+}
+
+.inputField::placeholder {
+	color: #a3c7b6;
+}
+
+.buttonContainer {
+	display: flex;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.button {
+	flex: 1;
+	padding: 1rem;
+	border: none;
+	border-radius: 8px;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.clearButton {
+	background-color: #e0ffe6;
+	color: #43e97b;
+}
+
+.clearButton:hover {
+	background-color: #c2f7e1;
+}
+
+.generateButton {
+	background-color: var(--button-green);
+	color: white;
+}
+
+.generateButton:hover {
+	background-color: var(--button-green-hover);
+	color: #43e97b;
+}
+
+.qrCodeContainer {
+	display: flex;
+	justify-content: center;
+	margin-top: 2rem;
+	padding: 2rem;
+	background-color: #fafff6;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(67, 233, 123, 0.08);
+}
