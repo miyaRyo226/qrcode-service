@@ -1,7 +1,7 @@
 import "../../styles/globals.css";
 
 // 事前に静的なページに生成する
-export function generateStaticParams() {
+export async function generateStaticParams() {
 	return [{ lang: "ja" }, { lang: "en" }];
 }
 
@@ -10,9 +10,9 @@ export default async function RootLayout({
 	params,
 }: Readonly<{
 	children: React.ReactNode;
-	params: { lang: "ja" | "en" };
+	params: Promise<{ lang: "ja" | "en" }>;
 }>) {
-	const { lang } = params;
+	const { lang } = await params;
 
 	return (
 		<html lang={lang}>
