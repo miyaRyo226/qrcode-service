@@ -12,7 +12,6 @@ function getLocale(request: Request) {
 		negotiatorHeaders[key] = value;
 	});
 
-	// @ts-ignore locales are readonly
 	const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
 
 	return match(languages, locales, defaultLocale);
@@ -34,7 +33,9 @@ export function middleware(request: Request) {
 		(locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
 	);
 
-	if (pathnameHasLocale) return;
+	if (pathnameHasLocale) {
+		return;
+	}
 
 	// その他のパスの場合は、デフォルトロケールにリダイレクト
 	const locale = getLocale(request);
