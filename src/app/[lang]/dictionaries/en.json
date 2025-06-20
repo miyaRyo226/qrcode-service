@@ -1,0 +1,12 @@
+{
+    "title": "QR Code Generator",
+    "ssid": "SSID",
+    "password": "WiFi Password",
+    "ssidPlaceholder": "Enter SSID",
+    "passwordPlaceholder": "Enter password",
+    "clearButton": "Clear Input",
+    "generateButton": "Generate QR Code",
+    "alertMessage": "Please enter SSID and password",
+    "lightMode": "Switch to light mode",
+    "darkMode": "Switch to dark mode"
+}

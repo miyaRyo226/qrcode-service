@@ -15,15 +15,19 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.6.1",
+    "negotiator": "^1.0.0",
     "next": "^15.3.3",
     "next-pwa": "^5.6.0",
     "qrcode.react": "^4.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@types/negotiator": "^0.6.4",
     "@types/node": "^24.0.1",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",

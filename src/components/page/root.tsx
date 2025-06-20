@@ -1,27 +1,29 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { QRCodeCanvas } from "qrcode.react";
 import { useEffect, useState } from "react";
-import styles from "../styles/Home.module.css";
+import styles from "../../styles/Home.module.css";
+import type { Dictionary } from "../../types/dictionary";
 
-export default function Home() {
+export default function HomeClient({
+	dict,
+	lang,
+}: {
+	dict: Dictionary;
+	lang: string;
+}) {
 	const [ssid, setSsid] = useState("");
 	const [password, setPassword] = useState("");
 	const [canMakeQRCode, setCanMakeQRCode] = useState(false);
 	const [isDarkMode, setIsDarkMode] = useState(false);
+	const router = useRouter();
 
 	useEffect(() => {
 		// Check for saved theme preference or default to light mode
-		const savedTheme = localStorage.getItem("theme");
 		const prefersDark = window.matchMedia(
 			"(prefers-color-scheme: dark)",
 		).matches;
-
-		if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-			setIsDarkMode(true);
-			document.documentElement.style.colorScheme = "dark";
-		} else {
-			document.documentElement.style.colorScheme = "light";
-		}
+		setIsDarkMode(prefersDark);
 	}, []);
 
 	const toggleTheme = () => {
@@ -37,43 +39,56 @@ export default function Home() {
 		}
 	};
 
+	const toggleLocale = () => {
+		const newLang = lang === "ja" ? "en" : "ja";
+		router.push(`/${newLang}`);
+	};
+
 	return (
 		<>
-			<button
-				type="button"
-				className="theme-toggle"
-				onClick={toggleTheme}
-				aria-label={
-					isDarkMode ? "ライトモードに切り替え" : "ダークモードに切り替え"
-				}
-			>
-				{isDarkMode ? "☀️" : "🌙"}
-			</button>
-			<h1 className={styles["title"]}>QRコード作成</h1>
+			<div className={styles["headerControls"]}>
+				<button
+					type="button"
+					className="theme-toggle"
+					onClick={toggleTheme}
+					aria-label={isDarkMode ? dict.lightMode : dict.darkMode}
+				>
+					{isDarkMode ? "☀️" : "🌙"}
+				</button>
+				<button
+					type="button"
+					className="locale-toggle"
+					onClick={toggleLocale}
+					aria-label={lang === "ja" ? "Switch to English" : "日本語に切り替え"}
+				>
+					{lang === "ja" ? "🇺🇸" : "🇯🇵"}
+				</button>
+			</div>
+			<h1 className={styles["title"]}>{dict.title}</h1>
 			<div className={styles["container"]}>
 				<main className={styles["main"]}>
 					<div className={styles["inputGroup"]}>
 						<label htmlFor="ssid-input" className={styles["label"]}>
-							SSID
+							{dict.ssid}
 						</label>
 						<input
 							id="ssid-input"
 							type="text"
 							className={styles["inputField"]}
-							placeholder="SSIDを入力"
+							placeholder={dict.ssidPlaceholder}
 							value={ssid}
 							onChange={(e) => setSsid(e.target.value)}
 						/>
 					</div>
 					<div className={styles["inputGroup"]}>
 						<label htmlFor="password-input" className={styles["label"]}>
-							WIFIパスワード
+							{dict.password}
 						</label>
 						<input
 							id="password-input"
 							type="password"
 							className={styles["inputField"]}
-							placeholder="パスワードを入力"
+							placeholder={dict.passwordPlaceholder}
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
 						/>
@@ -88,7 +103,7 @@ export default function Home() {
 								setCanMakeQRCode(false);
 							}}
 						>
-							入力クリア
+							{dict.clearButton}
 						</button>
 						<button
 							type="button"
@@ -97,11 +112,11 @@ export default function Home() {
 								if (ssid.length > 0 && password.length > 0) {
 									setCanMakeQRCode(true);
 								} else {
-									alert("SSIDとパスワードを入力してください");
+									alert(dict.alertMessage);
 								}
 							}}
 						>
-							QRコードを作成
+							{dict.generateButton}
 						</button>
 					</div>
 					{canMakeQRCode && (
