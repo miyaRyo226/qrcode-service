@@ -1,0 +1,146 @@
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.headerControls {
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	display: flex;
+	gap: 1rem;
+	z-index: 10;
+}
+
+.headerControls button {
+	width: 3rem;
+	height: 3rem;
+	border: none;
+	border-radius: 50%;
+	background: var(--card-background);
+	box-shadow: 0 2px 8px var(--shadow-color);
+	cursor: pointer;
+	transition: all 0.3s ease;
+	font-size: 1.2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.headerControls button:hover {
+	transform: scale(1.1);
+	box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.spacer {
+	flex: 0 0 10vh;
+}
+
+.title {
+	position: absolute;
+	top: 23%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 2.5rem;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 2rem;
+	color: var(--title-green);
+	letter-spacing: 0.05em;
+	text-shadow: 0 2px 8px var(--title-shadow);
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	height: 30vh;
+	width: 30vw;
+	background: var(--card-background);
+	padding: 2rem;
+	border-radius: 16px;
+	box-shadow: 0 4px 12px var(--shadow-color);
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.label {
+	font-size: 0.9rem;
+	color: var(--title-green);
+	font-weight: 600;
+	padding-left: 0.25rem;
+}
+
+.inputField {
+	padding: 1rem;
+	border: 2px solid var(--input-border);
+	border-radius: 8px;
+	font-size: 1rem;
+	transition: all 0.3s ease;
+	background: var(--input-background);
+	color: var(--text-color);
+}
+
+.inputField:focus {
+	outline: none;
+	border-color: var(--accent-green);
+	box-shadow: 0 0 0 3px var(--title-shadow);
+}
+
+.inputField::placeholder {
+	color: var(--input-placeholder);
+}
+
+.buttonContainer {
+	display: flex;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.button {
+	flex: 1;
+	padding: 1rem;
+	border: none;
+	border-radius: 8px;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.clearButton {
+	background-color: var(--title-shadow);
+	color: var(--title-green);
+}
+
+.clearButton:hover {
+	background-color: var(--input-border);
+}
+
+.generateButton {
+	background-color: var(--button-green);
+	color: var(--background-color);
+}
+
+.generateButton:hover {
+	background-color: var(--button-green-hover);
+	color: var(--title-green);
+}
+
+.qrCodeContainer {
+	display: flex;
+	justify-content: center;
+	margin-top: 2rem;
+	padding: 2rem;
+	background-color: var(--qr-background);
+	border-radius: 8px;
+	box-shadow: 0 2px 8px var(--shadow-color);
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}

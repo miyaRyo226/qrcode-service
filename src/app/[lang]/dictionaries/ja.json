@@ -1,0 +1,12 @@
+{
+	"title": "QRコード作成",
+	"ssid": "SSID",
+	"password": "WIFIパスワード",
+	"ssidPlaceholder": "SSIDを入力",
+	"passwordPlaceholder": "パスワードを入力",
+	"clearButton": "入力クリア",
+	"generateButton": "QRコードを作成",
+	"alertMessage": "SSIDとパスワードを入力してください",
+	"lightMode": "ライトモードに切り替え",
+	"darkMode": "ダークモードに切り替え"
+}

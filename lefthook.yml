@@ -1,0 +1,12 @@
+# lefthook.yml
+
+pre-commit:
+  parallel: true
+  jobs:
+    - run: npm run check:fix
+      glob:
+        - "src/**/*.ts"
+        - "src/**/*.tsx"
+        - "src/**/*.js"
+        - "src/**/*.jsx"
+      stage_fixed: true

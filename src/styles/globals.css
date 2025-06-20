@@ -1,0 +1,58 @@
+:root {
+	color-scheme: light dark;
+	--main-green: light-dark(#a8ffce, #1a3d2e);
+	--sub-green: light-dark(#faffd1, #2d4a3a);
+	--accent-green: light-dark(#7ee8fa, #4a9ba8);
+	--button-green: light-dark(#7ee8fa, #4a9ba8);
+	--button-green-hover: light-dark(#a8ffce, #5bbf7a);
+	--title-green: light-dark(#43e97b, #7ee8fa);
+	--title-shadow: light-dark(#e0ffe6, #1a3d2e);
+	--text-color: light-dark(#333333, #e0e0e0);
+	--background-color: light-dark(#a8ffce, #1a3d2e);
+	--card-background: light-dark(
+		rgba(255, 255, 255, 0.85),
+		rgba(45, 74, 58, 0.85)
+	);
+	--input-background: light-dark(#fafff6, #2d4a3a);
+	--input-border: light-dark(#c2f7e1, #4a9ba8);
+	--input-placeholder: light-dark(#a3c7b6, #7a9b8a);
+	--qr-background: light-dark(#fafff6, #2d4a3a);
+	--shadow-color: light-dark(
+		rgba(67, 233, 123, 0.08),
+		rgba(126, 232, 250, 0.15)
+	);
+}
+
+body,
+html {
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	background: var(--background-color);
+	color: var(--text-color);
+	/* transition: background-color 0.3s ease, color 0.3s ease; */
+}
+
+/* Header controls styles */
+.theme-toggle,
+.locale-toggle {
+	background: var(--card-background);
+	border: 2px solid var(--accent-green);
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2rem;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.theme-toggle:hover,
+.locale-toggle:hover {
+	background: var(--accent-green);
+	color: var(--background-color);
+	transform: scale(1.1);
+}
