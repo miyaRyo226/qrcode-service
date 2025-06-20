@@ -1,11 +1,25 @@
 :root {
-	--main-green: #a8ffce;
-	--sub-green: #faffd1;
-	--accent-green: #7ee8fa;
-	--button-green: #7ee8fa;
-	--button-green-hover: #a8ffce;
-	--title-green: #43e97b;
-	--title-shadow: #e0ffe6;
+	--main-green: light-dark(#a8ffce, #1a3d2e);
+	--sub-green: light-dark(#faffd1, #2d4a3a);
+	--accent-green: light-dark(#7ee8fa, #4a9ba8);
+	--button-green: light-dark(#7ee8fa, #4a9ba8);
+	--button-green-hover: light-dark(#a8ffce, #5bbf7a);
+	--title-green: light-dark(#43e97b, #7ee8fa);
+	--title-shadow: light-dark(#e0ffe6, #1a3d2e);
+	--text-color: light-dark(#333333, #e0e0e0);
+	--background-color: light-dark(#a8ffce, #1a3d2e);
+	--card-background: light-dark(
+		rgba(255, 255, 255, 0.85),
+		rgba(45, 74, 58, 0.85)
+	);
+	--input-background: light-dark(#fafff6, #2d4a3a);
+	--input-border: light-dark(#c2f7e1, #4a9ba8);
+	--input-placeholder: light-dark(#a3c7b6, #7a9b8a);
+	--qr-background: light-dark(#fafff6, #2d4a3a);
+	--shadow-color: light-dark(
+		rgba(67, 233, 123, 0.08),
+		rgba(126, 232, 250, 0.15)
+	);
 }
 
 body,
@@ -15,5 +29,31 @@ html {
 	padding: 0;
 	width: 100vw;
 	height: 100vh;
-	background: var(--main-green);
+	background: var(--background-color);
+	color: var(--text-color);
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode toggle button styles */
+.theme-toggle {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	background: var(--card-background);
+	border: 2px solid var(--accent-green);
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2rem;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.theme-toggle:hover {
+	background: var(--accent-green);
+	color: var(--background-color);
 }

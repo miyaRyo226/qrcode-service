@@ -29,10 +29,11 @@
 	gap: 1.5rem;
 	height: 30vh;
 	width: 30vw;
-	background: rgba(255, 255, 255, 0.85);
+	background: var(--card-background);
 	padding: 2rem;
 	border-radius: 16px;
-	box-shadow: 0 4px 12px rgba(67, 233, 123, 0.08);
+	box-shadow: 0 4px 12px var(--shadow-color);
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .inputGroup {
@@ -43,28 +44,29 @@
 
 .label {
 	font-size: 0.9rem;
-	color: #43e97b;
+	color: var(--title-green);
 	font-weight: 600;
 	padding-left: 0.25rem;
 }
 
 .inputField {
 	padding: 1rem;
-	border: 2px solid #c2f7e1;
+	border: 2px solid var(--input-border);
 	border-radius: 8px;
 	font-size: 1rem;
 	transition: all 0.3s ease;
-	background: #fafff6;
+	background: var(--input-background);
+	color: var(--text-color);
 }
 
 .inputField:focus {
 	outline: none;
 	border-color: var(--accent-green);
-	box-shadow: 0 0 0 3px #e0ffe6;
+	box-shadow: 0 0 0 3px var(--title-shadow);
 }
 
 .inputField::placeholder {
-	color: #a3c7b6;
+	color: var(--input-placeholder);
 }
 
 .buttonContainer {
@@ -85,22 +87,22 @@
 }
 
 .clearButton {
-	background-color: #e0ffe6;
-	color: #43e97b;
+	background-color: var(--title-shadow);
+	color: var(--title-green);
 }
 
 .clearButton:hover {
-	background-color: #c2f7e1;
+	background-color: var(--input-border);
 }
 
 .generateButton {
 	background-color: var(--button-green);
-	color: white;
+	color: var(--background-color);
 }
 
 .generateButton:hover {
 	background-color: var(--button-green-hover);
-	color: #43e97b;
+	color: var(--title-green);
 }
 
 .qrCodeContainer {
@@ -108,7 +110,8 @@
 	justify-content: center;
 	margin-top: 2rem;
 	padding: 2rem;
-	background-color: #fafff6;
+	background-color: var(--qr-background);
 	border-radius: 8px;
-	box-shadow: 0 2px 8px rgba(67, 233, 123, 0.08);
+	box-shadow: 0 2px 8px var(--shadow-color);
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
