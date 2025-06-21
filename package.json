@@ -15,7 +15,8 @@
     "format:fix": "biome format --write src",
     "check": "biome check src",
     "check:fix": "biome check --apply src",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "validate:i18n": "tsx scripts/validate-dictionaries.mjs"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.6.1",
@@ -26,7 +27,8 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
-    "server-only": "^0.0.1"
+    "server-only": "^0.0.1",
+    "zod": "^3.25.67"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
@@ -35,6 +37,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "lefthook": "^1.11.13",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   }
 }
